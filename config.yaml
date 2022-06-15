@@ -1,0 +1,28 @@
+# FPN, Unet, Unet++ or DeepLabV3
+arch: FPN
+backbone: timm-resnest200e
+pretrained: true
+
+num_slices: 5
+# resize images to this size on the fly
+image_size: 400
+# crop to this fraction of image_size
+crop_size: 0.96
+
+# optimizer settings
+optim: adam
+lr: 0.001
+weight_decay: 0.01
+batch_size: 32
+
+# scheduler settings
+gamma: 0.96
+
+# data augmentation
+aug_prob: 0.4
+strong_aug: true
+max_cutout: 0
+
+# folds
+n_folds: 5
+fold_ids: 3

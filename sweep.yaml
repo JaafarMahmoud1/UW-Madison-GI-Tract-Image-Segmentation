@@ -1,0 +1,25 @@
+parameters:
+  arch:
+    values: [FPN, Unet, DeepLabV3]
+  backbone:
+    values: [efficientnet-b0, efficientnet-b3]
+  lr:
+    distribution: log_uniform
+    min: 0.001
+    max: 0.004
+  weight_decay:
+    distribution: q_uniform
+    min: 0.0
+    max: 0.01
+    q: 0.001
+  aug_prob:
+    distribution: uniform
+    min: 0.1
+    max: 0.9
+  max_cutout:
+    distribution: q_uniform
+    min: 0
+    max: 50
+    q: 10
+  strong_aug:
+    values: [true, false]
