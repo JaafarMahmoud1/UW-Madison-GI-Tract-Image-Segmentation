@@ -1,13 +1,13 @@
 # FPN, Unet, Unet++ or DeepLabV3
 arch: FPN
-backbone: timm-resnest200e
+backbone: efficientnet-b4
 pretrained: true
 
-num_slices: 5
+num_slices: 7
 # resize images to this size on the fly
-image_size: 400
+image_size: 512
 # crop to this fraction of image_size
-crop_size: 0.96
+crop_size: 0.875
 
 # optimizer settings
 optim: adam

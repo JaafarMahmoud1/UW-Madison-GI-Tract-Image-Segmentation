@@ -14,6 +14,8 @@ class ModelWrapper(nn.Module):
             arch = smp.UnetPlusPlus
         elif conf.arch == 'DeepLabV3':
             arch = smp.DeepLabV3
+        elif conf.arch == 'DeepLabV3+':
+            arch = smp.DeepLabV3Plus
         else:
             assert 0, f'Unknown architecture {conf.arch}'
 

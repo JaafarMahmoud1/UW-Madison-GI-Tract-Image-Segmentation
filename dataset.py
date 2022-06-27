@@ -65,7 +65,7 @@ class VisionDataset(data.Dataset):
             # read mask
             msk_file = self.masks[index]
             msk = cv2.imread(msk_file, cv2.IMREAD_UNCHANGED)
-            msk = self.resize(msk, cv2.INTER_NEAREST)
+            msk = self.resize(msk, cv2.INTER_NEAREST_EXACT)
             msk = msk.astype(np.float32)
             result = self.transform(image=img, mask=msk)
             img, msk = result['image'], result['mask']
